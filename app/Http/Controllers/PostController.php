@@ -64,7 +64,7 @@ class PostController extends Controller
         });*/
         $suggestions = $suggestions->filter(function($post) use ($query){
             $post->distance = levenshtein($query, $post->name);
-            if ($post->distance < 70){
+            if ($post->distance < 70){ //3
                 return true;
             }
             return false;
